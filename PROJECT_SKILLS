@@ -7,35 +7,37 @@
  COMMIT;                                                       
                                                                
  --*************************************************           
- --THIS CODE CREATES THE ACTOR TABLESPACE                      
- --*************************************************           
+ --THIS CODE CREATES THE PROJECT_SKILLS TABLESPACE                      
+ --************************************************* 
+ 
  CREATE TABLESPACE P001TSAE IN P070DB USING STOGROUP UNTDISK;  
 
 
 --*************************************************          
---THIS CODE CREATES THE ACTOR TABLE                          
+--THIS CODE CREATES THE PROJECT_SKILLS TABLE                          
 --*************************************************          
  CREATE TABLE PROJECT_SKILLS                                         
  (P_ID INTEGER NOT NULL,                                    
   S_ID INTEGER NOT NULL,                                 
   PRIMARY KEY (P_ID, S_ID),
-  FOREIGN KEY (P_ID) REFERENCES PROJECT (P_ID),
+  FOREIGN KEY (P_ID) REFERENCES PROJECT (P_ID), //throws error -538
   FOREIGN KEY (S_ID) REFERENCES SKILLS (S_ID))                                       
   IN P070DB.P001TSAE;                                        
 
+
 --*************************************************
---THIS CODE CREATES THE PK INDEX ON ACTOR
+--THIS CODE CREATES THE PK INDEX ON PROJECT_SKILLS
 --*************************************************
---CREATE PK INDEX ON CLIENT 
+--CREATE PK INDEX ON PROJECT_SKILLS 
 CREATE UNIQUE INDEX UNTP001.X1AE
-ON UNTP070.CLIENT (P_ID, S_ID)    
+ON UNTP070.PROJECTSKILLS (P_ID, S_ID)    
 USING STOGROUP UNTDISK;         
 COMMIT;                                                   
 
 
-============================CONSULT HAS TABLE DATA
+
 --*************************************************
---THIS CODE WILL POPULATE THE ACTOR TABLE
+--THIS CODE WILL POPULATE THE PROJECTSKILLS TABLE
 --*************************************************                            
 INSERT INTO PROJECT_SKILLS VALUES(P_ID, S_ID);
 
