@@ -18,7 +18,9 @@
  CREATE TABLE PROJECT_SKILLS                                         
  (P_ID INTEGER NOT NULL,                                    
   S_ID INTEGER NOT NULL,                                 
-  PRIMARY KEY (P_ID, S_ID))                                       
+  PRIMARY KEY (P_ID, S_ID),
+  FOREIGN KEY (P_ID) REFERENCES PROJECT (P_ID),
+  FOREIGN KEY (S_ID) REFERENCES SKILLS (S_ID))                                       
   IN P070DB.P001TSAE;                                        
 
 --*************************************************
