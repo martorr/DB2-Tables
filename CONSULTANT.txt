@@ -1,0 +1,68 @@
+--*************************************************
+--THIS COMMAND WILL DROP THE TABLESPACE.  IF YOU
+--DO NOT HAVE AN TABLESPACE NAMED THIS, DO NOT RUN
+--THIS PORTION OF THE CODE
+--*************************************************
+ DROP TABLESPACE P070DB.P001TSAA;                              
+ COMMIT;                                                       
+                                                               
+ --*************************************************           
+ --THIS CODE CREATES THE ACTOR TABLESPACE                      
+ --*************************************************           
+ CREATE TABLESPACE P001TSAA IN P070DB USING STOGROUP UNTDISK;  
+                                                               
+
+--*************************************************
+--THIS CODE CREATES THE ACTOR TABLE
+--*************************************************
+ CREATE TABLE CONSULTANT        
+ (C_ID INTEGER NOT NULL,        
+  C_FIRST CHAR(25) NOT NULL,    
+  C_MIDDLEI CHAR (25) NOT NULL, 
+  C_LAST CHAR (25) NOT NULL,    
+  C_ADDY CHAR(25) NOT NULL,     
+  C_CITY CHAR(25) NOT NULL,     
+  C_STATE CHAR(25) NOT NULL,    
+  C_ZIP CHAR(25) NOT NULL,      
+  C_PHONE CHAR(25) NOT NULL,    
+  C_EMAIL CHAR(25) NOT NULL,    
+  PRIMARY KEY (C_ID))           
+  IN P070DB.P001TSAA;           
+
+--*************************************************
+--THIS CODE CREATES THE PK INDEX ON ACTOR
+--*************************************************
+--CREATE PK INDEX ON CONSULTANT 
+CREATE UNIQUE INDEX UNTP070.X1AA
+ON UNTP070.CONSULTANT (C_ID)    
+USING STOGROUP UNTDISK;         
+COMMIT;                                                   
+
+
+============================CONSULT HAS ^
+--*************************************************
+--THIS CODE WILL POPULATE THE ACTOR TABLE
+--*************************************************                            
+--INSERT INTO CONSULTANT VALUES(CID, First', 'MI', 'Last', 'Address', 'City', 'TX', 75150, PHONENUM, 'email@email');
+--IN CDATA FILE below
+
+ INSERT INTO CONSULTANT VALUES(1, 'MARIO', 'O', 'TORRES',              
+                         '3200 COLORADO DR.', 'DENTON', 'TX', '76210', 
+                               '4692220777', 'MARIO@GMAIL.COM');       
+                                                                       
+ INSERT INTO CONSULTANT VALUES(2, 'NOAH', 'H', 'ERVIN',                
+                            '201 CHURRY LN.', 'DENTON', 'TX', '76210', 
+                               '4690274731', 'NOAH@GMAIL.COM');        
+                                                                       
+ INSERT INTO CONSULTANT VALUES(3, 'ROBERT', 'T', 'CARDENAS',           
+                             '124 BOCA RD', 'TX','BROWN', '78654',     
+                               '9564908742', 'ROB@GMAIL.COM');         
+                                                                       
+                                                                       
+ INSERT INTO CONSULTANT VALUES(4, 'CAMERON', 'N', 'DAVIS',             
+                       '3200 COLORADO DR.', 'MESQUITE', 'TX', '75150', 
+                               '4699999999', 'CAMMY@GMAIL.COM');       
+                                                                       
+ INSERT INTO CONSULTANT VALUES(5, 'JASMIN', 'N', 'TORRES',             
+                         '4213 PARK DR.', 'MESQUITE', 'TX', '75150',   
+                               '2143333333', 'JAZZY@GMAIL.COM');       
