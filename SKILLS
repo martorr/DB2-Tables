@@ -1,0 +1,35 @@
+ DROP TABLESPACE P070DB.P001TSAF;                              
+ COMMIT;                                                       
+                                                               
+ --*************************************************           
+ --THIS CODE CREATES THE ACTOR TABLESPACE                      
+ --*************************************************           
+ CREATE TABLESPACE P001TSAf IN P070DB USING STOGROUP UNTDISK;  
+
+
+--*************************************************          
+--THIS CODE CREATES THE ACTOR TABLE                          
+--*************************************************          
+ CREATE TABLE SKILLS                                         
+ (S_ID INTEGER NOT NULL,                                    
+  S_DESC CHAR(50) NOT NULL,                                 
+  PRIMARY KEY (S_ID))
+  IN P070DB.P001TSAD;                                        
+
+--*************************************************
+--THIS CODE CREATES THE PK INDEX ON ACTOR
+--*************************************************
+--CREATE PK INDEX ON CLIENT 
+CREATE UNIQUE INDEX UNTP001.X1AF
+ON UNTP070.SKILLS (S_ID)    
+USING STOGROUP UNTDISK;         
+COMMIT;                                                   
+
+
+============================CONSULT HAS TABLE DATA
+--*************************************************
+--THIS CODE WILL POPULATE THE ACTOR TABLE
+--*************************************************                            
+INSERT INTO CONSULTANT VALUES(CID, NAME, CONTACT, PHONE);
+
+//DATA IN PROJDATA
