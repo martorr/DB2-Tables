@@ -7,13 +7,13 @@
  COMMIT;                                                       
                                                                
  --*************************************************           
- --THIS CODE CREATES THE ACTOR TABLESPACE                      
+ --THIS CODE CREATES THE CONSULTANT TABLESPACE                      
  --*************************************************           
  CREATE TABLESPACE P001TSAA IN P070DB USING STOGROUP UNTDISK;  
                                                                
 
 --*************************************************
---THIS CODE CREATES THE ACTOR TABLE
+--THIS CODE CREATES THE CONSULTANT TABLE
 --*************************************************
  CREATE TABLE CONSULTANT        
  (C_ID INTEGER NOT NULL,        
@@ -30,7 +30,7 @@
   IN P070DB.P001TSAA;           
 
 --*************************************************
---THIS CODE CREATES THE PK INDEX ON ACTOR
+--THIS CODE CREATES THE PK INDEX ON CONSULTANT
 --*************************************************
 --CREATE PK INDEX ON CONSULTANT 
 CREATE UNIQUE INDEX UNTP070.X1AA
@@ -38,13 +38,12 @@ ON UNTP070.CONSULTANT (C_ID)
 USING STOGROUP UNTDISK;         
 COMMIT;                                                   
 
-
-============================CONSULT HAS ^
 --*************************************************
---THIS CODE WILL POPULATE THE ACTOR TABLE
+--THIS CODE WILL POPULATE THE CONSULTANT TABLE
 --*************************************************                            
 --INSERT INTO CONSULTANT VALUES(CID, First', 'MI', 'Last', 'Address', 'City', 'TX', 75150, PHONENUM, 'email@email');
 --IN CDATA FILE below
+
 
  INSERT INTO CONSULTANT VALUES(1, 'MARIO', 'O', 'TORRES',              
                          '3200 COLORADO DR.', 'DENTON', 'TX', '76210', 
