@@ -7,13 +7,13 @@
  COMMIT;                                                       
                                                                
  --*************************************************           
- --THIS CODE CREATES THE ACTOR TABLESPACE                      
+ --THIS CODE CREATES THE CLIENT TABLESPACE                      
  --*************************************************           
  CREATE TABLESPACE P001TSAB IN P070DB USING STOGROUP UNTDISK;  
 
 
 --*************************************************          
---THIS CODE CREATES THE ACTOR TABLE                          
+--THIS CODE CREATES THE CLIENT TABLE                          
 --*************************************************          
  CREATE TABLE CLIENT                                         
  (CL_ID INTEGER NOT NULL,                                    
@@ -24,7 +24,7 @@
   IN P070DB.P001TSAB;                                        
 
 --*************************************************
---THIS CODE CREATES THE PK INDEX ON ACTOR
+--THIS CODE CREATES THE PK INDEX ON CLIENT
 --*************************************************
 --CREATE PK INDEX ON CLIENT 
 CREATE UNIQUE INDEX UNTP001.X1AB
@@ -33,11 +33,10 @@ USING STOGROUP UNTDISK;
 COMMIT;                                                   
 
 
-============================CONSULT HAS TABLE DATA
 --*************************************************
---THIS CODE WILL POPULATE THE ACTOR TABLE
+--THIS CODE WILL POPULATE THE CLIENT TABLE
 --*************************************************                            
-INSERT INTO CONSULTANT VALUES(CID, NAME, CONTACT, PHONE);
+--INSERT INTO CONSULTANT VALUES(CID, NAME, CONTACT, PHONE);
 
 INSERT INTO CLIENT VALUES(1, 'MARVEL STUDIOS', 'STAN LEE', '999000111');
 INSERT INTO CLIENT VALUES(2, 'CAPCOM', 'PAC MAN', '4560401342');
