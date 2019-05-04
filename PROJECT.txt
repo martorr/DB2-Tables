@@ -31,7 +31,7 @@
 --*************************************************
 --CREATE PK INDEX ON PROJECT 
 CREATE UNIQUE INDEX UNTP001.X1AD
-ON UNTP070.PROJECT (C_ID, CL_ID)    
+ON UNTP070.PROJECT (P_ID, P_ATTR)    
 USING STOGROUP UNTDISK;         
 COMMIT;                                                   
 
