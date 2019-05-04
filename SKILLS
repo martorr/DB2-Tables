@@ -14,7 +14,7 @@
  (S_ID INTEGER NOT NULL,                                    
   S_DESC CHAR(50) NOT NULL,                                 
   PRIMARY KEY (S_ID))
-  IN P070DB.P001TSAD;                                        
+  IN P070DB.P001TSAF;                                        
 
 --*************************************************
 --THIS CODE CREATES THE PK INDEX ON SKILLS
