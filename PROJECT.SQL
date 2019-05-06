@@ -9,37 +9,34 @@
  --*************************************************           
  --THIS CODE CREATES THE PROJECT TABLESPACE                      
  --*************************************************           
- CREATE TABLESPACE P001TSAD IN P070DB USING STOGROUP UNTDISK;  
+  CREATE TABLESPACE P001TSPR IN P070DB USING STOGROUP UNTDISK;
 
 
 --*************************************************          
 --THIS CODE CREATES THE PROJECT TABLE                          
 --*************************************************          
- CREATE TABLE PROJECT                                         
- (P_ID INTEGER NOT NULL,                                    
-  P_ATTR CHAR(25) NOT NULL,                                 
-  P_NAME CHAR (25) NOT NULL,                             
-  C_ID INTEGER NOT NULL,
-  CL_ID INTEGER NOT NULL,
-  PRIMARY KEY (P_ID, P_ATTR),
-  FOREIGN KEY (C_ID) REFERENCES CONSULTANT (C_ID),
-  FOREIGN KEY (CL_ID) REFERENCES CLIENT (CL_ID))                                     
-  IN P070DB.P001TSAD;                                        
+ CREATE TABLE PROJECT                     
+(P_ID     INTEGER     NOT NULL,          
+ P_ATTR   CHAR(25)    NOT NULL,          
+ P_NAME   CHAR(25)    NOT NULL,          
+ C_ID     INTEGER     NOT NULL,          
+ CL_ID    INTEGER     NOT NULL,          
+ PRIMARY KEY (P_ID, P_ATTR),             
+ FOREIGN KEY(C_ID) REFERENCES CONSULTANT,
+ FOREIGN KEY(CL_ID) REFERENCES CLIENT)   
+ IN P070DB.P001TSPR; COMMIT;                                        
 
 --*************************************************
 --THIS CODE CREATES THE PK INDEX ON PROJECT
 --*************************************************
---CREATE PK INDEX ON PROJECT 
-CREATE UNIQUE INDEX UNTP001.X1AD
-ON UNTP070.PROJECT (P_ID, P_ATTR)    
-USING STOGROUP UNTDISK;         
-COMMIT;                                                   
+-CREATE UNIQUE INDEX UNTP001.X1PR
+ON UNTP070.PROJECT(P_ID, P_ATTR)
+USING STOGROUP UNTDISK; COMMIT;                                        
 
 --*************************************************
 --THIS CODE WILL POPULATE THE PROJECT TABLE
 --*************************************************                            
 
-//DATA IN PROJDATA
 INSERT INTO PROJECT VALUES(1, 'EASY', 'PROJECT ALPHA', 1, 1);     
 INSERT INTO PROJECT VALUES(2, 'MEDIUM', 'PROJECT BETA', 2, 2);    
 INSERT INTO PROJECT VALUES(3, 'HARD', 'PROJECT CHARLIE', 3, 3);   
