@@ -15,16 +15,15 @@
 --*************************************************          
 --THIS CODE CREATES THE PROJECT TABLE                          
 --*************************************************          
- CREATE TABLE PROJECT                     
-(P_ID     INTEGER     NOT NULL,          
- P_ATTR   CHAR(25)    NOT NULL,          
- P_NAME   CHAR(25)    NOT NULL,          
- C_ID     INTEGER     NOT NULL,          
- CL_ID    INTEGER     NOT NULL,          
- PRIMARY KEY (P_ID, P_ATTR),             
- FOREIGN KEY(C_ID) REFERENCES CONSULTANT,
- FOREIGN KEY(CL_ID) REFERENCES CLIENT)   
- IN P070DB.P001TSPR; COMMIT;                                        
+ CREATE TABLE PROJECT                      
+(P_ID    INTEGER   NOT NULL,              
+ P_NAME  CHAR(25)  NOT NULL,              
+ C_ID    INTEGER   NOT NULL,              
+ CL_ID   INTEGER   NOT NULL,              
+ PRIMARY KEY (P_ID),                      
+ FOREIGN KEY (C_ID) REFERENCES CONSULTANT,
+ FOREIGN KEY (CL_ID) REFERENCES CLIENT)   
+ IN P070DB.P001TSPR; COMMIT;                                                
 
 --*************************************************
 --THIS CODE CREATES THE PK INDEX ON PROJECT
